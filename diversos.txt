@@ -1,0 +1,31 @@
+
+Diferenciar uma dependência de desenvolvimento de uma dependência de produção:
+
+Uma dependência de desenvolvimento vai atuar apenas em ambiente de desenvolvimento, 
+como o ESLint, Prettier, JSON Server e o próprio Vite; elas não serão utilizadas no 
+ambiente de produção, quando o nosso site estiver no ar em um endereço da web;
+Já uma dependência de produção precisa ter seu código-fonte importado mesmo quando nosos site 
+for para produção, que é o caso do Axios. Isso porque utilizamos diretamente os métodos do Axios 
+para realizar requisições HTTP nos arquivos JS que irão para produção.
+
+Utilizar a CDN do Axios:
+
+É a forma mais simples de utilizar seu código-fonte;
+Porém, não temos um controle de versionamento que o NPM nos fornece;
+Também não temos o IntelliSense (auto-completamento) do VSCode para o Axios.
+Migrar um projeto para o Vite:
+Criamos um projeto Vite com npm create vite@4.4.1;
+Migramos os arquivos, dependências e scripts necessários;
+Utilizar o Axios junto com o NPM, como uma dependência de produção:
+Em um projeto Vite, conseguimos usar a sintaxe import axios from "axios" para utilizar o Axios diretamente em um arquivo JS;
+Colocar o nome de um pacote NPM diretamente dentro do caminho da importação é uma sintaxe que funciona apenas em um ambiente Node.js;
+Ou seja, essa sintaxe funcionou porque o Vite nos disponibiliza um servidor Node que, além de entender a sintaxe, transforma ela para um código que os navegadores consigam entender;
+Normalmente, o caminho de importação no front-end sempre inicia com um caminho relativo ou absoluto. Exemplos: "./caminho", "../caminho", "/caminho".
+
+Para compartilhar um Gist com quem você quiser, antes de criá-lo, altere a opção “Create secret gist” para “Create public gist”, assim ele se tornará público. Depois de criá-lo, você terá um link como o seguinte:
+
+https://gist.github.com/antonio-evaldo/002ad55e1cf01ef3fc6ee4feb9152964
+Cada bloco de código do Gist possui um botão chamado “Raw”, que levará a uma URL para aquele bloco de código específico, que mostra na tela seu código-fonte. O bloco de código do meu gist acima possui a seguinte URL, que usamos no curso:
+
+https://gist.githubusercontent.com/antonio-evaldo/e8a63621b51c883931eb3fa3a3eca990/raw/12f5c46ee6dd00d03c051adadaf341e06452cea0/videos.txt
+Bacana, não é? Essa é uma forma muito simples de criar URLs e praticar requisições GET nos seus projetos!
